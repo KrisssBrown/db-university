@@ -3,7 +3,11 @@ FROM `students`
 WHERE YEAR(`date_of_birth`) = 1990;
 
 
-
 SELECT * 
 FROM `students` 
 WHERE YEAR(`date_of_birth`) = 1990;
+
+
+SELECT ROUND(DATEDIFF (CURRENT_DATE, `date_of_birth`)/365) AS `eta` ,`name`,`surname`
+FROM `students`
+WHERE DATEDIFF (CURRENT_DATE, `date_of_birth`)/365 > 30;
