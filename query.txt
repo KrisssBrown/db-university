@@ -30,3 +30,8 @@ WHERE `level` = 'magistrale';
 
 SELECT COUNT(*) AS `n_dipartimenti`
 FROM `departments`;
+
+
+SELECT COUNT(*) 
+FROM `teachers`
+WHERE `phone` IS NULL;
