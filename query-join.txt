@@ -28,3 +28,13 @@ ON `degrees`.`id`=`students`.`degree_id`
 JOIN `departments`
 ON `departments`.`id`= `degrees`.`department_id`
 ORDER BY CONCAT(`students`.`name`,"",`students`.`surname`) ASC;
+
+
+SELECT * 
+FROM `degrees`
+JOIN `courses`
+ON `courses`.`degree_id`= `degrees`.`id`
+JOIN `course_teacher`
+ON `courses`.`id`= `course_teacher`.`course_id`
+JOIN `teachers`
+ON `course_teacher`.`teacher_id`=`teachers`.`id`;
