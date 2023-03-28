@@ -8,9 +8,9 @@ FROM `courses`
 WHERE (`cfu`) > 10;
 
 
-SELECT ROUND(DATEDIFF (CURRENT_DATE, `date_of_birth`)/365) AS `eta` ,`name`,`surname`
+SELECT TIMESTAMPDIFF (YEAR, `date_of_birth`, CURRENT_DATE) AS `eta` ,`name`,`surname`
 FROM `students`
-WHERE DATEDIFF (CURRENT_DATE, `date_of_birth`)/365 > 30;
+WHERE TIMESTAMPDIFF (YEAR, `date_of_birth`, CURRENT_DATE) > 30;
 
 
 SELECT `name`,`period`,`year` 
