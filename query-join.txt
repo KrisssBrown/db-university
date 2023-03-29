@@ -27,7 +27,7 @@ JOIN `degrees`
 ON `degrees`.`id`=`students`.`degree_id`
 JOIN `departments`
 ON `departments`.`id`= `degrees`.`department_id`
-ORDER BY CONCAT(`students`.`name`,"",`students`.`surname`) ASC;
+ORDER BY CONCAT(`students`.`surname`,"",`students`.`name`) ASC;
 
 
 SELECT * 
@@ -40,7 +40,7 @@ JOIN `teachers`
 ON `course_teacher`.`teacher_id`=`teachers`.`id`;
 
 
-SELECT DISTINCT(CONCAT(`teachers`.`name`,"",`teachers`.`surname`)) as `teachers`
+SELECT DISTINCT`teachers`.*
 FROM `teachers`
 JOIN `course_teacher`
 ON `teachers`.`id`=`course_teacher`.`teacher_id`
